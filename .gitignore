@@ -1,0 +1,6 @@
+.venv
+__pycache__
+credenziali.py
+session.token
+cert.pem
+foo.py
