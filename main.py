@@ -16,5 +16,5 @@ if __name__ == "__main__":
     print("Avvio svuotamento playlist...")
     spotify.empty_playlist(QUEUE_PL)
     print("\nAvvio riempimento playlist...")
-    spotify.random_fill_playlist(QUEUE_PL, SW_PL)
+    spotify.random_fill_playlist(QUEUE_PL, SW_PL, 5)
     print("\nOperazione completata!")

@@ -1,3 +1,4 @@
+import time
 import random
 import requests
 
@@ -28,11 +29,14 @@ class SpotifyClient:
 
         self._user_id = user_id
 
-    def random_fill_playlist(self, dst: str, src: str) -> None:
+        random.seed(time.time())
+
+    def random_fill_playlist(self, dst: str, src: str, shuffles = 1) -> None:
         # GET SOURCE PLAYLIST
         pl = self.get_songs_from_playlist(src)
         # SHUFFLE SOURCE
-        random.shuffle(pl)
+        for _ in range(shuffles):
+            random.shuffle(pl)
         # INSERT IN DST
         songs = self._get_songs_uris(pl, 100)
         print(f"Inserendo tracce...")
